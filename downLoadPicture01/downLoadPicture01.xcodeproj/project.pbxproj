@@ -36,6 +36,7 @@
 		04C925081D68763600802B03 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C924F01D68763600802B03 /* UIImageView+HighlightedWebCache.m */; };
 		04C925091D68763600802B03 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C924F21D68763600802B03 /* UIImageView+WebCache.m */; };
 		04C9250A1D68763600802B03 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C924F41D68763600802B03 /* UIView+WebCacheOperation.m */; };
+		04C9250C1D687BEA00802B03 /* apps.json in Resources */ = {isa = PBXBuildFile; fileRef = 04C9250B1D687BEA00802B03 /* apps.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,7 @@
 		04C924F21D68763600802B03 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		04C924F31D68763600802B03 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		04C924F41D68763600802B03 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		04C9250B1D687BEA00802B03 /* apps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = apps.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				04C924B31D6874B000802B03 /* Assets.xcassets */,
 				04C924B51D6874B000802B03 /* LaunchScreen.storyboard */,
 				04C924B81D6874B000802B03 /* Info.plist */,
+				04C9250B1D687BEA00802B03 /* apps.json */,
 				04C924A71D6874B000802B03 /* Supporting Files */,
 			);
 			path = downLoadPicture01;
@@ -280,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04C924B71D6874B000802B03 /* LaunchScreen.storyboard in Resources */,
+				04C9250C1D687BEA00802B03 /* apps.json in Resources */,
 				04C924B41D6874B000802B03 /* Assets.xcassets in Resources */,
 				04C924B21D6874B000802B03 /* Main.storyboard in Resources */,
 			);
