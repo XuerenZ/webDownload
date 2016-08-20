@@ -9,6 +9,7 @@
 #import "HMTableViewController.h"
 #import "AFNetworking.h"
 #import "HMPictureModel.h"
+#import "HMTableViewCell.h"
 
 @interface HMTableViewController ()
 
@@ -16,31 +17,34 @@
 
 @implementation HMTableViewController
 {
-    NSArray<HMPictureModel *> *_arrList;
+    NSArray *_arrList;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadPicture];
 }
-
+//https://raw.githubusercontent.com/XuerenZ/webDownload/master/downLoadPicture01/downLoadPicture01/apps.json
 - (void)loadPicture
 {
-    NSString *strUrl = @"https://github.com/XuerenZ/webDownload.git";
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    
-    [manager GET:strUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray<NSDictionary *> *  _Nullable responseObject) {
+    NSString *strUrl = @"https://raw.githubusercontent.com/XuerenZ/webDownload/master/downLoadPicture01/downLoadPicture01/apps.json";
+
+    [manager GET:strUrl parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nullable responseObject) {
+        
         NSMutableArray *arrM = [NSMutableArray arrayWithCapacity:responseObject.count];
         
         [responseObject enumerateObjectsUsingBlock:^(NSDictionary *  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             HMPictureModel *model = [HMPictureModel getModelWithDict:obj];
             [arrM addObject:model];
+            
         }];
         _arrList = arrM.copy;
+//        需要刷新列表
+        [self.tableView reloadData];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSLog(@"error");
     }];
-    
 }
 
 #pragma mark - Table view data source
@@ -55,15 +59,17 @@
     return _arrList.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    HMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
     
-    // Configure the cell...
+    HMPictureModel *model = _arrList[indexPath.row];
+    cell.model = model;
+    
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
